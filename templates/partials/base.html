@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Backcountry Excursion &mdash; Leading Travel Agency in Nepal | Trekking in Nepal</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png'%}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
+        <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+    
+    
+        <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        
+      </head>
+    
+<body>
+
+    {% block navbar %}
+        
+    {% endblock navbar %}
+
+    {% block message %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    {% endblock message %}
+
+    {% block main %}
+    
+    {% endblock main %}
+
+    {% block affilate %}
+    
+    {% endblock affilate %}
+    {% block footer %}
+       
+    {% endblock footer %}
+    
+</body> 
+
+{% block script %}
+    {% include 'partials/script.html' %}
+{% endblock script %}
+
+</html>
