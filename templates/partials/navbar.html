@@ -14,25 +14,28 @@
       <div class="row align-items-center">
         
         <div class="col-6 col-xl-2">
-          <h1 class="mb-0"><a href="{% url 'home' %}" class="text-black h2 mb-0"><img src="{% static 'images/logo.png' %}" width="75%"></a></h1>
+          <h1 class="mb-0"><a href="{% url 'home' %}" class="text-black h2 mb-0"><img src="{{logo.logo.url}}" width="75%"></a></h1>
         </div>
         <div class="col-10 col-md-8 d-none d-xl-block">
           <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
             <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-              <li class="active">
+              {% with url_name=request.resolver_match.url_name %}
+              <li class="dropdown {% if url_name == 'home' %}active{% endif %}">
                 <a href="{% url 'home' %}">Home</a>
               </li>
-              <li>
+              <li class="dropdown {% if url_name == 'about' %}active{% endif %}"><a href="{% url 'about' %}">About</a></li>
+              <li class="dropdown {% if url_name == 'country' %}active{% endif %}">
                 <a href="{% url 'country' %}">Destinations</a>
               </li>
               
-              <li><a href="{% url 'discount' %}">Discount</a></li>
-              <li><a href="{% url 'about' %}">About</a></li>
-              <li><a href="{% url 'blog' %}">Blog</a></li>
+              {% comment %} <li><a href="{% url 'discount' %}">Discount</a></li> {% endcomment %}
               
-              <li><a href="{% url 'contact' %}">Contact</a></li>
-              <li><a href="{% url 'booking' %}">Book Online</a></li>
+              <li class="dropdown {% if url_name == 'blog' %}active{% endif %}"><a href="{% url 'blog' %}">Blog</a></li>
+              
+              <li class="dropdown {% if url_name == 'contact' %}active{% endif %}"><a href="{% url 'contact' %}">Contact</a></li>
+              <li class="dropdown {% if url_name == 'booking' %}active{% endif %}"><a href="{% url 'booking' %}">Book Online</a></li>
+              {% endwith %}
             </ul>
           </nav>
         </div>
@@ -41,16 +44,16 @@
           <div class="d-none d-xl-inline-block">
             <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
               <li>
-                <a href="#" class="pl-0 pr-3 text-black"><span class="icon-tripadvisor"></span></a>
+                <a href="{{social.tripadviser}}" class="pl-0 pr-3 text-black"><span class="icon-tripadvisor"></span></a>
               </li>
               <li>
-                <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
+                <a href="{{social.twitter}}" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
               </li>
               <li>
-                <a href="#" class="pl-3 pr-3 text-black"><span class="icon-facebook"></span></a>
+                <a href="{{social.facebook}}" class="pl-3 pr-3 text-black"><span class="icon-facebook"></span></a>
               </li>
               <li>
-                <a href="#" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
+                <a href="{{social.instagram}}" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
               </li>
               
             </ul>
@@ -62,5 +65,4 @@
 
       </div>
     </div>
-    
   </header>

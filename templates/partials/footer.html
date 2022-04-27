@@ -4,7 +4,7 @@
       <div class="row text-center">
         <div class="col-md-12">
           <h2 class="mb-5 text-black">Want To Travel With Us?</h2>
-          <p class="mb-0"><a href="booking.html" class="btn btn-primary py-3 px-5 text-white">Book Now</a></p>
+          <p class="mb-0"><a href="{% url 'booking' %}" class="btn btn-primary py-3 px-5 text-white">Book Now</a></p>
         </div>
       </div>
     </div>
@@ -29,18 +29,18 @@
             </div>
             <div class="col-md-6 col-lg-6">
               <ul class="list-unstyled">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Destination</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'country' %}">Destination</a></li>
+                <li><a href="{% url 'service' %}">Services</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
               </ul>
             </div>
             <div class="col-md-6 col-lg-6">
               <ul class="list-unstyled">
-                <li><a href="#">About Us</a></li>
+                <li><a href="{% url 'booking' %}">Book Online</a></li>
                 <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Discounts</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                <li><a href="{% url 'discount' %}">Discounts</a></li>
               </ul>
             </div>
           </div>
@@ -73,10 +73,10 @@
       <div class="row pt-5 mt-5 text-center">
         <div class="col-md-12">
           <div class="mb-5">
-            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            <a href="{{social.facebook}}" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+            <a href="{{social.twitter}}" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+            <a href="{{social.instagram}}" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+            <a href="{{social.linkedin}}" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
           </div>
 
           <p>
